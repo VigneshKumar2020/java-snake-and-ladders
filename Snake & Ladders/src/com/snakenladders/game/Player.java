@@ -5,47 +5,40 @@ import java.util.Scanner;
 
 import com.snakenladders.board.Tile;
 
-public class Player
-{
+public class Player {
 	Tile tile;
 	Random rand = new Random();
 	final String name;
 	int output = 0;
 	public final int DICE_BOUND = 6;
 	Scanner sc = new Scanner(System.in);
-	
-	Player(String name, Tile tile)
-	{
+
+	Player(String name, Tile tile) {
 		this.name = name;
 		this.tile = tile;
 	}
-	
-	void input()
-	{
+
+	void input() {
 		System.out.println();
 		System.out.println(name + "! Enter anything to roll your die.");
 		sc.next();
 		output = rand.nextInt(DICE_BOUND) + 1;
 		System.out.println(output);
 	}
-	 
-	int getOutput()
-	{
+
+	int getOutput() {
 		return output;
 	}
-	
-	public void setTile(Tile tile)
-	{
+
+	public void setTile(Tile tile) {
 		this.tile = tile;
 	}
-	
-	public Tile getTile()
-	{
+
+	public Tile getTile() {
 		return tile;
 	}
-	
-	public String getName()
-	{
+
+	public String getName() {
 		return name;
 	}
 }

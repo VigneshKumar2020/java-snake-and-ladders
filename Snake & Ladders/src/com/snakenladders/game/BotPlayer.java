@@ -5,23 +5,19 @@ import java.util.concurrent.TimeUnit;
 
 import com.snakenladders.board.Tile;
 
-public final class BotPlayer extends Player
-{
+public final class BotPlayer extends Player {
 	String input = "";
 	Random rand = new Random();
-	
+
 	static final int RANDOM_BOUND = 1;
-	
-	BotPlayer(final String name, Tile tile)
-	{
+
+	BotPlayer(final String name, Tile tile) {
 		super(name, tile);
 	}
-	
+
 	@Override
-	void input()
-	{
-		try
-		{
+	void input() {
+		try {
 			System.out.println();
 			System.out.println(name + "! Enter anything to roll");
 			TimeUnit.MILLISECONDS.sleep(2000);
@@ -29,7 +25,9 @@ public final class BotPlayer extends Player
 			output = rand.nextInt(DICE_BOUND) + 1;
 			System.out.println(output);
 		}
-		
-		catch (InterruptedException e) {};
+
+		catch (InterruptedException e) {
+		}
+		;
 	}
 }
