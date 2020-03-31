@@ -36,10 +36,8 @@ public final class Board {
 		}
 
 		// Board-Building
-		for (int i = 0; i <= (NUMBER_OF_TILES + 5); i++) // 5 is added to that there's room if the player is at the end
-															// of the board, and he ends up having points more than 100
-															// (to avoid Null Pointer Exception)
-		{
+		for (int i = 0; i <= (NUMBER_OF_TILES + 5); i++)
+		{ //The use case is that the player might be above 95th tile, and his roll might bring him out of 100, so the +5 can save us from extra work
 			Tile e = new Tile(i);
 			check(i, e);
 			BOARD_MAP.put(i, e);
